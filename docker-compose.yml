@@ -10,7 +10,9 @@ services:
       - ./src:/var/www/html
     
   db:
-    image: mysql:8.4
+    build:
+      context: .
+      dockerfile: ./config/mysql/Dockerfile
     ports: 
       - "3306:3306"
     environment:
