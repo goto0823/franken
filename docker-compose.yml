@@ -1,8 +1,11 @@
 services:
   web:
-    image: dunglas/frankenphp:1.11.2-builder-php8
+    build:
+      context: .
+      dockerfile: ./config/franken/Dockerfile
     ports: 
       - "80:80"
+      - "5173:5173"
     volumes:
       - ./src:/var/www/html
     
